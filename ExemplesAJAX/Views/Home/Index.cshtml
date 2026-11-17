@@ -5,13 +5,29 @@
 @section Scripts{
     <script>
         // TODO: Écrire votre script
+
+        fetch("/Home/Partielle")
+            .then(data => data.text())
+        .then(ViewP => document.getElementById("1View").innerHTML = ViewP);
+
+        let NumValue = document.getElementById("NumeroInput").value;
+
+        let TextValue = document.getElementById("TextoInput").value;
+
+        let data = {
+            qty: NumeroInput,   // Remplacez x par le code qui permet d’aller chercher la valeur du input
+            texte: Texto  // Idem
+        };
+
+        console.log(data)
+
     </script>
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <!--Utiliser ce div pour afficher la 1ere vue partielle-->
-    <div></div>
+    <div id="1View"></div>
     <!--Utiliser ce div pour afficher la 2e vue partielle-->
     <div></div>
 </div>
